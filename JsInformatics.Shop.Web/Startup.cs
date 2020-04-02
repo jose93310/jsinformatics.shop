@@ -31,6 +31,9 @@ namespace JsInformatics.Shop.Web
                 cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddTransient<SeedDb>();
+
+            services.AddScoped<IRepository, Repository>();
 
             services.AddControllersWithViews();
         }
